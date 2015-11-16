@@ -1,0 +1,66 @@
+/* Reset */
+
+label {
+  /*display: block;*/
+  font-weight: inherit;
+}
+
+/*---------------------------*/
+/* Library */
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin .7s infinite linear;
+}
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+.radio label, .checkbox label {
+  font-weight: inherit;
+}
+
+/*---------------------------*/
+/* Custom */
+
+body {
+  font-family: "adelle-sans", sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3 {
+  font-weight: 800;
+}
+
+strong {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 60px;
+  font-style: italic;
+}
+
+/*h1 i {
+  font-family: "baskerville", serif;
+  font-style: italic;
+  font-weight: 200;
+  font-size: 90%;
+  line-height: inherit;
+}
+*/
+.basic-fields,
+.attending-fields {
+  display: none;
+}
+
+.label-help {
+  margin: 0;
+}

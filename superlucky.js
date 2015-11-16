@@ -1,6 +1,23 @@
+jQuery.extend({
+  getQueryParameters : function(str) {
+    return (str || document.location.search).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = n[1],this}.bind({}))[0];
+  }
+});
+
 $(document).ready(function() {
 
+  $data = $.getQueryParameters();
+  if ($data['email']) {
+    for (var field in $data) {
+      if ($data.hasOwnProperty(field)) {
+        // Yes, I know that this is a slight XSS vulnerability =)
+        $('[name="' + field +'"]').val(decodeURI($data[field]));
+      }
+    }
+  };
+
   $('input[name="attending"]').bind('change',function(){
+    $('.basic-fields').show();
     $('.attending-fields').toggle($(this).val() === 'yes');
   });
 
@@ -17,7 +34,7 @@ $(document).ready(function() {
       message: 'The first name is not valid',
         validators: {
           notEmpty: {
-            message: 'The first name is required and cannot be empty'
+            message: 'We need to know who you are!'
           },
         }
       },

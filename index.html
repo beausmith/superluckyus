@@ -2,42 +2,22 @@
 <html lang=en-us>
 <head>
   <meta charset=utf-8>
-  <title>Post to Google Sheet Demo</title>
-  <!-- bootstrap & fontawesome css -->
+  <title>Jenny & Beau’s Wedding Website</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="http://superlucky.us/">
+  <!-- <link href="/assets/favicon.png" rel="icon"> -->
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://use.typekit.net/hdz3bkl.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
   <link href="http://cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="http://cdn.jsdelivr.net/fontawesome/4.1.0/css/font-awesome.min.css" />
-
-  <!-- BootstrapValidator CSS -->
   <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
-
-  <!-- jQuery and Bootstrap JS -->
-  <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery/1.11.1/jquery.min.js"></script>
-  <script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-  <!-- BootstrapValidator JS -->
-  <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js"></script>
-
-  <!-- Animated Loading Icon -->
-  <style type="text/css">
-  .glyphicon-refresh-animate {
-      -animation: spin .7s infinite linear;
-      -webkit-animation: spin .7s infinite linear;
-  }
-
-  @-webkit-keyframes spin {
-      from { -webkit-transform: rotate(0deg);}
-      to { -webkit-transform: rotate(360deg);}
-  }
-
-  @keyframes spin {
-      from { transform: scale(1) rotate(0deg);}
-      to { transform: scale(1) rotate(360deg);}
-  }
-
-  .attending-fields {
-    display: none;
-  }
-  </style>
+  <link rel="stylesheet" href="/superlucky.css"/>
 </head>
 <body>
 </head>
@@ -45,71 +25,67 @@
 <body>
   <div class="container">
   <div class="row">
-    <div class="col-lg-12">
-      <h2>Jenny & Beau’s Wedding</h2>
-      <p>
-      Intro Form.
-      <p>
+    <div class="col-lg-12 text-center">
+      <h1>Jenny & Beau</h1>
+      <p>Saturday, June 18, 2016</p>
+      <p>Skåne, Sweden</p>
     </div>
   </div>
   <hr>
 
 
-  <form class="form-horizontal" role="form" id="test-form">
+
+
+
+
+
+
+  <form class="form" role="form" id="test-form">
+
     <div class="form-group">
-      <label class="col-lg-3 control-label">First Name</label>
-      <div class="col-lg-3 inputGroupContainer">
-        <div class="input-group">
-          <input type="text" class="form-control" name="firstName" placeholder="First Name"/>
-        </div>
+      <label>
+        <h3>Will you attend our wedding in Sweden on Saturday, June 18, 2016?</h3>
+        <p class="label-help">If not, fear not. Festivities in California are brewing for Fall 2016.</p>
+      </label>
+      <div class="radio">
+        <label>
+          <input type="radio" name="attending" value="yes">
+          <strong>Yes!</strong> We’re excited to celebrate with you this summer!
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="attending" value="no">
+          <strong>No.</strong> Unfortunately we can’t make it, but we’re looking forward the Califonia wedding in Fall 2016!
+        </label>
       </div>
     </div>
 
-    <div class="form-group">
-      <label class="col-lg-3 control-label">Last Name</label>
-      <div class="col-lg-3 inputGroupContainer">
-        <div class="input-group">
-          <input type="text" class="form-control" name="lastName" placeholder="Last Name"/>
+    <div class="basic-fields">
+
+      <div class="row">
+        <div class="col-sm-4 form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name"/>
+        </div>
+        <div class="col-sm-4 form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name"/>
+        </div>
+        <div class="col-sm-4 form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="name@domain.com"/>
         </div>
       </div>
-    </div>
 
-    <div class="form-group">
-      <label class="col-lg-3 control-label">Email</label>
-      <div class="col-lg-3 inputGroupContainer">
-        <div class="input-group">
-          <input type="text" class="form-control" name="email" placeholder="name@domain.com"/>
-        </div>
-      </div>
     </div>
-
-    <div class="form-group">
-      <label class="col-lg-3 control-label">Attending</label>
-      <div class="col-lg-3 inputGroupContainer">
-        <div class="input-group col-lg-10">
-          <div class="radio">
-            <label>
-              <input type="radio" name="attending" value="yes">
-              Yes
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="attending" value="no">
-              No
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="attending-fields">
 
       <div class="form-group">
         <label class="col-lg-3 control-label">Phone</label>
         <div class="col-lg-3 inputGroupContainer">
           <div class="input-group">
-            <input type="text" class="form-control" name="phone" placeholder="+1-555-555-5555"/>
+            <input type="tel" class="form-control" name="phone" placeholder="+1-555-555-5555"/>
           </div>
         </div>
       </div>
@@ -118,13 +94,16 @@
         <label class="col-lg-3 control-label">Address</label>
         <div class="col-lg-3 inputGroupContainer">
           <div class="input-group col-lg-10">
-            <textarea type="text" class="form-control" name="address" placeholder="Enter your address here" rows="4" style="resize: vertical;"></textarea>
+            <input type="text" class="form-control" name="address" placeholder="Your mailing address"/>
           </div>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="col-lg-3 control-label">Others</label>
+        <label class="col-lg-3 control-label">
+          <h3>Names of people attending with you.</h3>
+          <p class="label-help">We’ve included those we assume will be in your party. <em>Please inquire regarding children.</em></p>
+        </label>
         <div class="col-lg-3 inputGroupContainer">
           <div class="input-group col-lg-10">
             <textarea type="text" class="form-control" name="others" placeholder="" rows="4" style="resize: vertical;"></textarea>
@@ -133,17 +112,7 @@
       </div>
 
       <div class="form-group">
-        <label class="col-lg-3 control-label">Diet</label>
-        <div class="col-lg-3 inputGroupContainer">
-          <div class="input-group">
-            <input type="text" class="form-control" name="diet" placeholder=""/>
-            maybe: remove or checkboxes?
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-lg-3 control-label">Interests</label>
+        <label class="col-lg-3 control-label">Are you interested in learning more about any of the following…?</label>
         <div class="col-lg-3 inputGroupContainer">
           <div class="input-group col-lg-10">
 
@@ -199,8 +168,63 @@
         </div>
       </div>
 
+      Do you like:
+      salted licorice
+      smoked eel
+      pickled herring
+      ABBA
+      Ace of Base
+      death metal
+      may poles
+      midnight sun
+      IKEA
+      Absolut vodka
+      cheese in tubes
+      meatballs
+      smorgasbord
+      Spotify
+      vikings
+      saunas followed by a swimming
+      moose
+      Volvo
+      murder mystery novels
+      ice hockey
+      beautiful women
+
+
       <div class="form-group">
-        <label class="col-lg-3 control-label">Comments or questions?</label>
+        <label class="col-lg-3 control-label">
+          <h3>Would you like to give a toast?</h3>
+          <p class="label-help">
+            Swedish weddings have many toasts and we welcome you to participate.
+          </p>
+        </label>
+        <div class="col-lg-3 inputGroupContainer">
+          <div class="input-group col-lg-10">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="speech">
+                I'd be honored to give a speech!
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="speechOther">
+                <input type="text" name="speechOtherName" placeholder=""/> would be honored to give a speech!
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-lg-3 control-label">
+          <h3>Comments or questions?</h3>
+          <p class="label-help">
+            Any dietary restrictions?
+            We’ll be serving a delicious feast of seasonal Swedish cuisine.
+          </p>
+        </label>
         <div class="col-lg-3 inputGroupContainer">
           <div class="input-group col-lg-10">
             <textarea type="text" class="form-control" name="notes" placeholder="How can we help?" rows="4" style="resize: vertical;"></textarea>
@@ -209,11 +233,12 @@
       </div>
 
     </div>
+    <div class="basic-fields">
 
-    <div class="form-group">
-      <div class="col-lg-9 col-lg-offset-3">
+      <div class="form-group">
         <button type="submit" class="btn btn-default" id="postForm">Submit</button>
       </div>
+
     </div>
 
   </form>
@@ -221,8 +246,14 @@
   </div>
 </body>
 
-<footer>
-<script src="validation-functions.js"></script>
-</footer>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js"></script>
+<!--
+<script src="/vendor/viewport-units-buggyfill.js"></script>
+<script>viewportUnitsBuggyfill.init();</script>
+-->
+
+<script src="/superlucky.js"></script>
 
 </html>
