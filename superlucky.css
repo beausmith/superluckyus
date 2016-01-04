@@ -5,24 +5,36 @@ label {
   font-weight: inherit;
 }
 
+iframe {
+  border: none;
+}
+
 /*---------------------------*/
 /* Library */
 
-.glyphicon-refresh-animate {
-    -animation: spin .7s infinite linear;
-    -webkit-animation: spin .7s infinite linear;
+.glyphicon-spin {
+  -webkit-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
 }
-
 @-webkit-keyframes spin {
-    from { -webkit-transform: rotate(0deg);}
-    to { -webkit-transform: rotate(360deg);}
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
 }
-
 @keyframes spin {
-    from { transform: scale(1) rotate(0deg);}
-    to { transform: scale(1) rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
 }
-
+.button-validating {
+  margin-right: 10px;
+}
 .radio label, .checkbox label {
   font-weight: inherit;
 }
@@ -46,8 +58,12 @@ strong {
 h1 {
   font-size: 60px;
   font-style: italic;
+  word-wrap: break-word;
 }
 
+b {
+  font-weight: 400;
+}
 /*h1 i {
   font-family: "baskerville", serif;
   font-style: italic;
@@ -63,4 +79,77 @@ h1 {
 
 .label-help {
   margin: 0;
+}
+
+[name="speechOtherName"] {
+  width: 8em;
+}
+
+.header--home {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #ccc no-repeat url(/i/camels.jpg) center 15%/cover fixed;
+  color: white;
+  box-shadow: 0 -10px 20px -10px black inset;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 2px 2px rgba(0, 0, 0, 0.5), 0 3px 3px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.header-content {
+  width: 100%;
+  padding-bottom: 5vh;
+  background: rgba(0,0,0,.55);
+}
+
+
+.section {
+  margin: 6vh 0 6vh;
+}
+
+.welcome-section {
+  max-width: 45rem;
+  margin: 8vh auto;
+}
+
+/*.wedding-map {
+  width: 100vw;
+  height: 100vh;
+}
+@media (min-width: 768px) {
+  .wedding-map {
+    height: 600px;
+  }
+}
+*/
+.parallax-image {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #ccc no-repeat url(/i/camels.jpg) center 15%/cover fixed;
+}
+
+.parallax-nye {background-image: url(/i/nye.jpg);}
+.parallax-berlin {background-image: url(/i/berlin.jpg);}
+.parallax-jump {background-image: url(/i/jump.jpg);}
+.parallax-square {background-image: url(/i/square.jpg);}
+.parallax-sallyjack {background-image: url(/i/sallyjack.jpg);}
+.parallax-ohio {background-image: url(/i/ohio.jpg);}
+.parallax-square {background-image: url(/i/square.jpg);}
+.parallax-square-2015 {background-image: url(/i/square-2015.jpg);}
+@media (max-width: 767px) {
+  .parallax-square-2015 {
+    height: 64vw;
+    background-attachment: inherit;
+  }
+}
+
+.parallax-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.5), 0 0 10px rgba(0,0,0,.5);
 }
