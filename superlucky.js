@@ -33,7 +33,7 @@ $(document).ready(function() {
 
     // Use Ajax to submit form data
     var url = 'https://script.google.com/macros/s/AKfycbxjhVrWmr2ho6GJSe-gxNtfN7e_GBY-0TbUBwxp_EUXFUXLZg/exec';
-    var redirectUrl = 'success-page.html';
+    var redirectUrl = 'rsvp-success.html';
     // show the loading
     $('#postForm').prepend($('<span></span>').addClass('glyphicon glyphicon-refresh glyphicon-spin button-validating'));
     var jqxhr = $.post(url, $form.serialize(), function(data) {
