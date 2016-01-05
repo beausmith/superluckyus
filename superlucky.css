@@ -89,7 +89,7 @@ b {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: #ccc no-repeat url(/i/ohio.jpg) center 15%/cover fixed;
+  background: #ccc no-repeat url(/i/ohio.jpg) center 15%/cover;
   box-shadow: 0 -10px 20px -10px black inset;
   display: -webkit-box;
   display: -webkit-flex;
@@ -103,6 +103,11 @@ b {
   -webkit-align-items: flex-end;
       -ms-flex-align: end;
           align-items: flex-end;
+}
+@media (min-width: 1024px) {
+  .header--home {
+    background-attachment: fixed;
+  }
 }
 .header-content {
   width: 100%;
@@ -126,7 +131,12 @@ b {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: #ccc no-repeat url(/i/camels.jpg) center 15%/cover fixed;
+  background: #ccc no-repeat url(/i/camels.jpg) center 15%/cover;
+}
+@media (min-width: 1024px) {
+  .parallax-image {
+    background-attachment: fixed;
+  }
 }
 
 /*.parallax-camels {background-image: url(/i/camels.jpg);}*/
@@ -135,15 +145,9 @@ b {
 .parallax-jump {background-image: url(/i/jump.jpg);}
 .parallax-square {background-image: url(/i/square.jpg);}
 .parallax-sallyjack {background-image: url(/i/sallyjack.jpg);}
-.parallax-ohio {background-image: url(/i/ohio.jpg);}
+/*.parallax-ohio {background-image: url(/i/ohio.jpg);}*/
 .parallax-square {background-image: url(/i/square.jpg);}
 .parallax-square-2015 {background-image: url(/i/square-2015.jpg);}
-@media (max-width: 767px) {
-  .parallax-square-2015 {
-    height: 64vw;
-    background-attachment: inherit;
-  }
-}
 
 .parallax-caption {
   position: absolute;
