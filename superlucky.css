@@ -26,10 +26,12 @@ iframe {
 }
 @keyframes spin {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
   }
 }
 .button-validating {
@@ -66,6 +68,7 @@ b {
 }
 
 .taller-title {
+  margin-top: 64px;
   margin-top: 4rem;
 }
 
@@ -88,9 +91,18 @@ b {
   height: 100vh;
   background: #ccc no-repeat url(/i/ohio.jpg) center 15%/cover fixed;
   box-shadow: 0 -10px 20px -10px black inset;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 .header-content {
   width: 100%;
@@ -105,6 +117,7 @@ b {
 }
 
 .welcome-section {
+  max-width: 720px;
   max-width: 45rem;
   margin: 8vh auto;
 }
