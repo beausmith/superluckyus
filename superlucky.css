@@ -133,7 +133,7 @@ b {
   height: 100vh;
   background: #ccc no-repeat url(/i/camels.jpg) center 15%/cover;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .parallax-image {
     background-attachment: fixed;
   }
