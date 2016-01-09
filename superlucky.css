@@ -67,6 +67,13 @@ b {
   font-weight: 400;
 }
 
+dt {
+  font-weight: 600;
+}
+dd + dt {
+  margin-top: 10px;
+}
+
 .taller-title {
   margin-top: 64px;
   margin-top: 4rem;
