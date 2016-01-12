@@ -1,9 +1,3 @@
-jQuery.extend({
-  getQueryParameters : function(str) {
-    return (str || document.location.search).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = n[1],this}.bind({}))[0];
-  }
-});
-
 var weddingDate = new Date(2016, 5, 18);
 var today = new Date();
 var daysLeft = parseInt((weddingDate - today)/(1000*60*60*24))
@@ -31,7 +25,15 @@ function eraseCookie(name) {
   createCookie(name,"",-1);
 }
 
+jQuery.extend({
+  getQueryParameters : function(str) {
+    return (str || document.location.search).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = n[1],this}.bind({}))[0];
+  }
+});
+
 $(document).ready(function() {
+
+  $("#days-left").text(daysLeft + " days until we celebrate!");
 
   $data = $.getQueryParameters();
   if ($data['email']) {
