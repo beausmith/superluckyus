@@ -4,6 +4,33 @@ jQuery.extend({
   }
 });
 
+var weddingDate = new Date(2016, 5, 18);
+var today = new Date();
+var daysLeft = parseInt((weddingDate - today)/(1000*60*60*24))
+
+function createCookie(name,value,days) {
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime()+(days*24*60*60*1000));
+    var expires = "; expires="+date.toGMTString();
+  }
+  else var expires = "";
+  document.cookie = name+"="+value+expires+"; path=/";
+}
+function readCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+function eraseCookie(name) {
+  createCookie(name,"",-1);
+}
+
 $(document).ready(function() {
 
   $data = $.getQueryParameters();
@@ -12,8 +39,16 @@ $(document).ready(function() {
       if ($data.hasOwnProperty(field)) {
         // Yes, I know that this is a slight XSS vulnerability =)
         $('[name="' + field +'"]').val(decodeURI($data[field]));
+        createCookie(field,$data[field],daysLeft);
       }
     }
+  };
+
+  if (readCookie("email")) {
+    $.each(document.cookie.split(/; */), function()  {
+      var cookiePart = this.split('=');
+      $('[name="' + cookiePart[0] +'"]').val(decodeURI(cookiePart[1]));
+    });
   };
 
   $('input[name="attending"]').bind('change',function(){
