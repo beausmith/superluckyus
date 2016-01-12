@@ -44,6 +44,8 @@ $(document).ready(function() {
         createCookie(field,$data[field],daysLeft);
       }
     }
+    // remove query from url
+    window.history.replaceState(null,null,window.location.pathname);
   };
 
   if (readCookie("email")) {
