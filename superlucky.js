@@ -1,6 +1,8 @@
 var weddingDate = new Date(2016, 5, 18);
+var valentinesDay = new Date(2016, 1, 14);
 var today = new Date();
 var daysLeft = parseInt((weddingDate - today)/(1000*60*60*24))
+var daysLeftToRSVP = parseInt((valentinesDay - today)/(1000*60*60*24))
 
 function createCookie(name,value,days) {
   if (days) {
@@ -34,6 +36,7 @@ jQuery.extend({
 $(document).ready(function() {
 
   $("#days-left").text(daysLeft + " days until we celebrate!");
+  $("#days-left-to-rsvp").text("Please RSVP by Valentines Day… " + daysLeftToRSVP + " days left!");
 
   $data = $.getQueryParameters();
   if ($data['email']) {
